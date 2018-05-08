@@ -1,4 +1,6 @@
 #!/usr/bin/groovy
+@Library('msa-cicd-jenkins-shared-libs')_
+
 import com.evobanco.Utils
 import com.evobanco.Constants
 
