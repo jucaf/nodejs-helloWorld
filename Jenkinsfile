@@ -4,7 +4,7 @@
 import com.evobanco.Utils
 import com.evobanco.Constants
 
-def runNodejsGenericJenkinsfile() {
+//def runNodejsGenericJenkinsfile() {
 
     def utils = new com.evobanco.Utils()
 
@@ -280,7 +280,7 @@ def runNodejsGenericJenkinsfile() {
 
     echo "END NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
-} //end of method
+//} //end of method
 
-return this;
+//return this;
 
