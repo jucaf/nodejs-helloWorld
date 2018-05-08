@@ -159,7 +159,7 @@ import com.evobanco.Constants
             }
         }
 
-        throw new hudson.AbortException('XXXXXXXXXXXXXXXXX')
+
 
         if (isPPCJenkinsFile) {
 
@@ -240,6 +240,8 @@ import com.evobanco.Constants
                     assert params.openshift.templatePath?.trim()
 
                     echo "params.openshift.templatePath: ${params.openshift.templatePath}"
+
+                    throw new hudson.AbortException('XXXXXXXXXXXXXXXXX')
                 }
 
             }
