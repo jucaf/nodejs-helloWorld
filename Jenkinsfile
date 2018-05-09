@@ -308,6 +308,18 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                     stage('Test') {
                         echo 'Testing...'
                         sh 'npm test'
+
+
+                        echo 'Publishing Test Coverage...'
+                        		publishHTML (target: [
+                        			allowMissing: false,
+                        			alwaysLinkToLastBuild: false,
+                        			keepAll: true,
+                        			reportDir: 'coverage/lcov-report',
+                        			reportFiles: 'index.html',
+                        			reportName: "Application Test Coverage"
+                        		])
+
                     }
                 } else {
                     echo "Skipping unit tests..."
