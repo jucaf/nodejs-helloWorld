@@ -302,7 +302,7 @@ import com.evobanco.NodejsConstants
                     sh 'npm i'
                 }
 
-echo 'params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesting}'
+echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesting}"
 
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
