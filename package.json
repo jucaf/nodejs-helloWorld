@@ -19,7 +19,7 @@
     ],
     "coverageThreshold": {
       "global": {
-        "functions": 25
+        "functions": 20
       }
     }
   },

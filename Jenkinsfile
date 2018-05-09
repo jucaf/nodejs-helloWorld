@@ -292,6 +292,35 @@ import com.evobanco.NodejsConstants
             }
 
 
+
+//            if (branchName != 'master')
+//            {
+
+                stage('Build') {
+                    echo 'Building dependencies...'
+                    sh 'npm i'
+                }
+
+                if (branchType in params.testing.predeploy.unitTesting) {
+                    stage('Test') {
+                        echo 'Testing...'
+                        sh 'npm test'
+                    }
+                } else {
+                    echo "Skipping unit tests..."
+                }
+
+
+//            } else {
+//                // Is the master branch. Check the existence of artifact on Artifactory
+
+
+
+//            }
+
+
+
+
             stage('Build') {
                 echo 'Building dependencies...'
                 sh 'npm i'
