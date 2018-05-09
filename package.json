@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "jest": {
+    "testResultsProcessor": "jest-sonar-reporter",
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [

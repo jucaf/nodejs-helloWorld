@@ -306,10 +306,14 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
 
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
+
+                        echo 'Installing jest-sonar-reporter'
+                        sh 'npm i -D jest-sonar-reporter'
+
                         echo 'Testing...'
                         sh 'npm test'
 
-
+/*
                         echo 'Publishing Test Coverage...'
                         		publishHTML (target: [
                         			allowMissing: false,
@@ -319,7 +323,7 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                         			reportFiles: 'index.html',
                         			reportName: "Application Test Coverage"
                         		])
-
+*/
                     }
                 } else {
                     echo "Skipping unit tests..."
