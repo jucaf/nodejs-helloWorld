@@ -302,7 +302,6 @@ import com.evobanco.NodejsConstants
                     sh 'npm i'
                 }
 
-echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesting}"
 
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
@@ -320,20 +319,6 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
 
 
 //            }
-
-
-
-
-            stage('Build') {
-                echo 'Building dependencies...'
-                sh 'npm i'
-            }
-
-            stage('Test') {
-                echo 'Testing...'
-                sh 'npm test'
-            }
-
 
 
         }
