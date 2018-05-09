@@ -41,7 +41,7 @@ import com.evobanco.NodejsConstants
     def jenknsFilePipelinePPC
 
     //Generic project configuration properties
-    def gitDefaultProjectConfigurationPath='https://github.com/isanmartin0/evo-cicd-generic-configuration'
+    def gitDefaultProjectConfigurationPath='https://github.com/isanmartin0/nodejs-helloworld'
     def relativeTargetDirGenericPGC = '/tmp/configs/generic/'
     def branchGenericPGC = 'master'
     def credentialsIdGenericPGC = '4b18ea85-c50b-40f4-9a81-e89e44e20178' //credentials of the generic configuration project
