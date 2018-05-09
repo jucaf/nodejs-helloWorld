@@ -38,7 +38,7 @@
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "joi": "^13.1.0"
-  }
+  },
   "devDependencies": {
     "jest": "^18.1.0"
   }
