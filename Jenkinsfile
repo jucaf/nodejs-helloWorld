@@ -341,7 +341,11 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                         echo "sonar_project_key: ${sonar_project_key}"
                         echo "sonar_project_name: ${sonar_project_name}"
 
-                        sh "sonar-scanner -Dsonar.host.url=${sonarQube} -Dsonar.testExecutionReportPaths=test-report.xml -Dsonar.projectKey=${sonar_project_key} -Dsonar.projectName=${sonar_project_name}"
+                        // requires SonarQube Scanner 3.1+
+                        def scannerHome = tool 'SonarQube Scanner 3.1.0';
+                        withSonarQubeEnv('sonarqube') {
+                          sh "${scannerHome}/bin/sonar-scanner -Dsonar.testExecutionReportPaths=test-report.xml -Dsonar.projectKey=${sonar_project_key} -Dsonar.projectName=${sonar_project_name}"
+                        }
 
                     }
                 } else {
