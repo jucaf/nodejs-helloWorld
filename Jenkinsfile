@@ -159,8 +159,10 @@ import com.evobanco.NodejsConstants
                 def exc_message = exc.message
                 echo "${exc_message}"
             }
-        }
 */
+
+        }
+
 
 
         if (isPPCJenkinsFile) {
