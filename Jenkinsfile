@@ -295,6 +295,11 @@ import com.evobanco.NodejsConstants
                 sh 'npm i'
             }
 
+            stage('Test') {
+                echo 'Testing...'
+                sh 'npm test'
+            }
+
 
 
         }
