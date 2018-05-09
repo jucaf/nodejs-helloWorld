@@ -231,6 +231,7 @@ import com.evobanco.NodejsConstants
                         echo "Using Jenkins.yml from Node.js generic project"
                     }
 
+
                     if (isPPCOpenshiftTemplate) {
                         //The template is provided by parallel project configuration (PPC)
                         params.openshift.templatePath = relativeTargetDirPPC + params.openshift.templatePath
@@ -300,6 +301,8 @@ import com.evobanco.NodejsConstants
                     echo 'Building dependencies...'
                     sh 'npm i'
                 }
+
+echo 'params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesting}'
 
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
