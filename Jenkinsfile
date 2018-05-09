@@ -330,6 +330,25 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                 }
 
 
+
+                if (branchType in params.testing.predeploy.sonarQube) {
+                    stage('SonarQube') {
+                        echo "Running SonarQube..."
+
+                        def sonar_project_key = moduleName + "-" + branchNameHY
+                        def sonar_project_name = moduleName + "-" + branchNameHY
+
+                        echo "sonar_project_key: ${sonar_project_key}"
+                        echo "sonar_project_name: ${sonar_project_name}"
+
+                        sh "sonar-scanner -Dsonar.host.url=${sonarQube} -Dsonar.testExecutionReportPaths=test-report.xml -Dsonar.projectKey=${sonar_project_key} -Dsonar.projectName=${sonar_project_name}"
+
+                    }
+                } else {
+                    echo "Skipping Running SonarQube..."
+                }
+
+
 //            } else {
 //                // Is the master branch. Check the existence of artifact on Artifactory
 
