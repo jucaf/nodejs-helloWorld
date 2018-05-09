@@ -243,7 +243,7 @@ import com.evobanco.Constants
 
                     echo "params.openshift.templatePath: ${params.openshift.templatePath}"
 
-                    throw new hudson.AbortException('XXXXXXXXXXXXXXXXX')
+
                 }
 
             }
