@@ -101,7 +101,7 @@ import com.evobanco.NodejsConstants
 
             moduleName = packageJSON.name
             echo "moduleName: ${moduleName}"
-
+/*
             try {
                 def parallelConfigurationProject = utils.getParallelConfigurationProjectURL(projectURL, moduleName)
 
@@ -160,7 +160,7 @@ import com.evobanco.NodejsConstants
                 echo "${exc_message}"
             }
         }
-
+*/
 
 
         if (isPPCJenkinsFile) {
