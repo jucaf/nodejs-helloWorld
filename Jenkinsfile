@@ -1,12 +1,12 @@
 #!/usr/bin/groovy
-@Library('msa-cicd-jenkins-shared-libs')_
+@Library('msa-cicd-nodejs-jenkins-shared-libs')_
 
-import com.evobanco.Utils
-import com.evobanco.Constants
+import com.evobanco.NodejsUtils
+import com.evobanco.NodejsConstants
 
 //def runNodejsGenericJenkinsfile() {
 
-    def utils = new com.evobanco.Utils()
+    def utils = new com.evobanco.NodejsUtils()
 
     def artifactorySnapshotsURL = 'https://digitalservices.evobanco.com/artifactory/libs-snapshot-local'
     def artifactoryReleasesURL = 'https://digitalservices.evobanco.com/artifactory/libs-release-local'
@@ -252,7 +252,7 @@ import com.evobanco.Constants
             stage('Prepare') {
                 echo "Prepare stage (PGC)"
 
-                setDisplayName()
+                nodejsSetDisplayName()
 
                 echo "${currentBuild.displayName}"
 
