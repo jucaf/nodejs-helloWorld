@@ -71,8 +71,10 @@ import com.evobanco.Constants
 
     node('nodejs') {
 
-        //sleep 10
-        checkout scm
+        stage('Checkout') {
+            echo 'Getting source code...'
+            checkout scm
+        }
 
 
         try {
@@ -261,6 +263,10 @@ import com.evobanco.Constants
                 branchNameHY = branchName.replace("/", "-").replace(".", "-").replace("_","-")
                 echo "Branch name processed: ${branchName}"
 
+/*
+
+
+
                 artifactoryRepoURL = (branchType == 'master' || branchType == 'release' || branchType == 'hotfix')  ? artifactoryReleasesURL : artifactorySnapshotsURL
 
                 def isValidVersion = utils.isValidBranchPomVersion(pom.version, branchType)
@@ -270,7 +276,14 @@ import com.evobanco.Constants
                     currentBuild.result = Constants.FAILURE_BUILD_RESULT
                     throw new hudson.AbortException('Version of artifact in pom is not allowed for this type of branch')
                 }
+*/
 
+            }
+
+
+            stage('Build') {
+                echo 'Building dependencies...'
+                sh 'npm i'
             }
 
 
