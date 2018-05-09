@@ -7,6 +7,22 @@
     "start": "node api.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/.vscode/**",
+      "!**/.git/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "functions": 25
+      }
+    }
+  }
   "repository": {
     "type": "git",
     "url": "https://github.com/isanmartin0/nodejs-helloWorld.git"
@@ -22,5 +38,8 @@
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "joi": "^13.1.0"
+  }
+  "devDependencies": {
+    "jest": "^18.1.0"
   }
 }

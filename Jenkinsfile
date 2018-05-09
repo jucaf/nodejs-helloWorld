@@ -255,6 +255,8 @@ import com.evobanco.NodejsConstants
                 echo 'Initializing...'
                 def node = tool name: 'Node-9.5.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
                 env.PATH = "${node}/bin:${env.PATH}"
+
+                sh "node -v"
             }
 
 
