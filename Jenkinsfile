@@ -307,6 +307,9 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
 
+                        echo 'Installing jest'
+                        sh 'npm i -D jest'
+
                         echo 'Installing jest-sonar-reporter'
                         sh 'npm i -D jest-sonar-reporter'
 
