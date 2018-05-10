@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# Jest test report
+test-report.xml
+
 #Idea
 .idea
 nodejs-helloWorld.iml
