@@ -4,7 +4,7 @@
   "description": "Hello World on Node js",
   "main": "app.js",
   "scripts": {
-    "start": "node api.js",
+    "start": "node src/api.js",
     "test": "jest"
   },
   "jest": {
@@ -12,7 +12,7 @@
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
+      "src/**/*.{js,jsx}",
       "!**/coverage/**",
       "!**/node_modules/**",
       "!**/.vscode/**",
@@ -41,6 +41,7 @@
     "joi": "^13.1.0"
   },
   "devDependencies": {
-    "jest": "^18.1.0"
+    "jest": "^18.1.0",
+    "jest-sonar-reporter": "^2.0.0"
   }
 }

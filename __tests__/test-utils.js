@@ -1,4 +1,4 @@
-const utils = require("../controllers/utils");
+const utils = require("../src/controllers/utils");
 
 // add
 describe("add two numbers", () => {
