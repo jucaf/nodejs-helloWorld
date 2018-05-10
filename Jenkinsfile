@@ -343,7 +343,7 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
 
                         echo "Replacing sonar.project.key and sonar.project.name variables with real values"
                         sh "sed -i -e 's/[sonar_project_key]/${sonar_project_key}/g' sonar-project.properties"
-
+                        sh "sed -i -e 's/[sonar_project_name]/${sonar_project_name}/g' sonar-project.properties"
 
                         // requires SonarQube Scanner 3.1+
                         def scannerHome = tool 'SonarQube Scanner 3.1.0';
