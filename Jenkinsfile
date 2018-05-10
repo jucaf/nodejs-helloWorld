@@ -344,7 +344,7 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                         // requires SonarQube Scanner 3.1+
                         def scannerHome = tool 'SonarQube Scanner 3.1.0';
                         withSonarQubeEnv('sonarqube') {
-                          sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.testExecutionReportPaths=test-report.xml -Dsonar.exclusions=node_modules/** -Dsonar.projectKey=${sonar_project_key} -Dsonar.projectName=${sonar_project_name} -Dsonar.sources=. -Dsonar.tests=__tests__"
+                          sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.testExecutionReportPaths=test-report.xml -Dsonar.exclusions=node_modules/**, __tests__/** -Dsonar.projectKey=${sonar_project_key} -Dsonar.projectName=${sonar_project_name} -Dsonar.sources=. -Dsonar.tests=__tests__"
                         }
 
                     }
