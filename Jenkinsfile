@@ -352,7 +352,8 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                         }
 
 
-                        def continue = input message: 'Waiting for user approval',
+                        def cont = 'Yes'
+                        cont = input message: 'Waiting for user approval',
                         parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
