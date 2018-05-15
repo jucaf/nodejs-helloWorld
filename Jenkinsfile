@@ -298,8 +298,6 @@ import com.evobanco.NodejsConstants
                     sh 'npm i'
                 }
 
-echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesting}"
-
                 if (branchType in params.testing.predeploy.unitTesting) {
                     stage('Test') {
 
@@ -351,15 +349,18 @@ echo "params.testing.predeploy.unitTesting: ${params.testing.predeploy.unitTesti
                         }
 
 
-                        def cont = 'Yes'
-                        cont = input message: 'Waiting for user approval',
-                        parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
                     }
                 } else {
                     echo "Skipping Running SonarQube..."
                 }
+
+
+                def cont = 'Yes'
+                cont = input message: 'Waiting for user approval',
+                parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+
 
 
 //            } else {
