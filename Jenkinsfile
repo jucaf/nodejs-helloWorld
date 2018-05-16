@@ -389,7 +389,6 @@ import com.evobanco.NodejsConstants
                     echo "Deploying artifact to Artifactory..."
                     withNPM(npmrcConfig: 'my-custom-npmrc') {
                         sh 'npm whoami'
-                        sh 'npm login'
                         sh 'npm publish'
                     }
                 }
