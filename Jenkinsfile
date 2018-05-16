@@ -431,7 +431,7 @@ import com.evobanco.NodejsConstants
                     environment = envLabel
                     jenkinsNS = jenkinsNamespace
                     artCredential = artifactoryCredential
-                    template = params.openshift.templatePath
+                    template = openshiftNodejsTemplateGenericPath
                     branchHY = branchNameHY
                     branch_type = branchType
                     dockerRegistry = registry
