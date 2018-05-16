@@ -412,6 +412,28 @@ import com.evobanco.NodejsConstants
 //            }
 
 
+
+            stage('OpenShift Build') {
+
+                /**********************************************************
+                 ************* OPENSHIFT PROJECT CREATION *****************
+                 **********************************************************/
+
+                echo "Building image on OpenShift..."
+
+                openshiftCheckAndCreateProject {
+                    oseCredential = openshiftCredential
+                    cloudURL = openshiftURL
+                    environment = envLabel
+                    jenkinsNS = jenkinsNamespace
+                    artCredential = artifactoryCredential
+                    template = params.openshift.templatePath
+                    branchHY = branchNameHY
+                    branch_type = branchType
+                    dockerRegistry = registry
+                }
+
+
         }
 
     } // end of node

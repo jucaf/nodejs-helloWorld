@@ -78,7 +78,7 @@ objects:
     runPolicy: Serial
     source:
       git:
-        ref: master
+        ref: ${SOURCE_REPOSITORY_BRANCH}
         uri: ${SOURCE_REPOSITORY_URL}
       type: Git
     strategy:
@@ -243,8 +243,11 @@ parameters:
 - description: "WAR_FILE_URL"
   name: "WAR_FILE_URL"
   value: ""
-- description: "SOURCE_REPOSITORY_URLL"
+- description: "SOURCE_REPOSITORY_URL"
   name: "SOURCE_REPOSITORY_URL"
+  value: ""
+- description: "SOURCE_REPOSITORY_BRANCH"
+  name: "SOURCE_REPOSITORY_BRANCH"
   value: ""
 - description: "NPM_MIRROR"
   name: "NPM_MIRROR"
