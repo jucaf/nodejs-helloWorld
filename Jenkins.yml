@@ -39,6 +39,9 @@ testing:
       - develop
       - release
 
+npmRepositoryDeploy:
+  - release
+
 notifications:
   branch:
     - feature

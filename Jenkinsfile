@@ -385,12 +385,16 @@ import com.evobanco.NodejsConstants
                 parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
-                stage('Artifact Deploy') {
-                    echo "Deploying artifact to Artifactory..."
-                    withNPM(npmrcConfig: 'my-custom-npmrc') {
-                        sh 'npm whoami'
-                        sh 'npm publish'
+                if (branchType in params.npmRepositoryDeploy) {
+
+                    stage('Artifact Deploy') {
+                        echo "Deploying artifact to Artifactory..."
+                        withNPM(npmrcConfig: 'my-custom-npmrc') {
+                            sh 'npm whoami'
+                            sh 'npm publish'
+                        }
                     }
+
                 }
 
 
