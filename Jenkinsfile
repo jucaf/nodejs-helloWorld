@@ -352,6 +352,8 @@ import com.evobanco.NodejsConstants
                 }
 
 
+cont = input message: 'Waiting for user approval',
+parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
                 if (branchType in params.testing.predeploy.sonarQube) {
                     stage('SonarQube') {
