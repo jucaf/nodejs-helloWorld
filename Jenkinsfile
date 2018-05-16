@@ -208,6 +208,7 @@ import com.evobanco.NodejsConstants
 
                     echo "Node.js generic configuration project loading"
 
+/*
                     retry (3) {
                         checkout([$class                           : 'GitSCM',
                                   branches                         : [[name: branchGenericPGC]],
@@ -218,7 +219,7 @@ import com.evobanco.NodejsConstants
                                   userRemoteConfigs                : [[credentialsId: credentialsIdGenericPGC,
                                                                        url          : gitDefaultProjectConfigurationPath]]])
                     }
-
+*/
                     echo "Node.js generic configuration project loaded"
 
 
