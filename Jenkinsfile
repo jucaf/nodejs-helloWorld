@@ -269,10 +269,6 @@ import com.evobanco.NodejsConstants
                 }
             }
 
-cont = input message: 'Waiting for user approval',
-parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
-
-
 
             stage('Prepare') {
                 echo "Prepare stage (PGC)"
