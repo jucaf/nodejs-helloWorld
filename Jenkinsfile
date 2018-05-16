@@ -32,7 +32,8 @@ import com.evobanco.NodejsConstants
     def isPPCJenkinsYaml = false
     def isPPCOpenshiftTemplate = false
     def jenkinsFilePathPPC = relativeTargetDirPPC + 'Jenkinsfile'
-    def jenkinsYamlPathPPC = relativeTargetDirPPC + 'Jenkins.yml'
+    //def jenkinsYamlPathPPC = relativeTargetDirPPC + 'Jenkins.yml'
+    jenkinsYamlPathPPC = 'Jenkins.yml'
     def openshiftNodejsTemplatePathPPC = relativeTargetDirPPC + 'kube/nodejs_template.yaml'
     def jenknsFilePipelinePPC
 
