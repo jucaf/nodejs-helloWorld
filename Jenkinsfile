@@ -264,9 +264,9 @@ import com.evobanco.NodejsConstants
 
 
             stage('TEST npm whoami') {
-                //withNPM(npmrcConfig: 'my-custom-npmrc') {
+                withNPM(npmrcConfig: 'my-custom-npmrc') {
                     sh 'npm whoami'
-                //}
+                }
             }
 
 cont = input message: 'Waiting for user approval',
@@ -314,7 +314,10 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
 
                 stage('Build') {
                     echo 'Building dependencies...'
-                    sh 'npm i'
+
+                    withNPM(npmrcConfig: 'my-custom-npmrc') {
+                        sh 'npm i'
+                    }
                 }
 
                 if (branchType in params.testing.predeploy.unitTesting) {
@@ -324,10 +327,14 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
                         sh 'npm i -D jest'
 
                         echo 'Installing jest-sonar-reporter'
-                        sh 'npm i -D jest-sonar-reporter'
+                        withNPM(npmrcConfig: 'my-custom-npmrc') {
+                            sh 'npm i -D jest-sonar-reporter'
+                        }
 
                         echo 'Testing...'
-                        sh 'npm test'
+                        withNPM(npmrcConfig: 'my-custom-npmrc') {
+                            sh 'npm test'
+                        }
 
 /*
                         echo 'Publishing Test Coverage...'
@@ -375,6 +382,13 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
                     echo "Skipping Running SonarQube..."
                 }
 
+
+                stage('Artifact Deploy') {
+                    echo "Deploying artifact to Artifactory..."
+                    withNPM(npmrcConfig: 'my-custom-npmrc') {
+                        sh 'npm publish'
+                    }
+                }
 
 
 
