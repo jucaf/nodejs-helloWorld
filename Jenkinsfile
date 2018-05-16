@@ -63,6 +63,11 @@ import com.evobanco.NodejsConstants
     def openshift_route_hostname = ''
     def openshift_route_hostname_with_protocol = ''
 
+
+
+
+    def cont = 'Yes'
+
     echo "BEGIN NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
     node('nodejs') {
@@ -293,7 +298,7 @@ import com.evobanco.NodejsConstants
 //            if (branchName != 'master')
 //            {
 
-def cont = 'Yes'
+
 cont = input message: 'Waiting for user approval',
 parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
@@ -363,7 +368,7 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
 
 
 
-                def cont = 'Yes'
+
                 cont = input message: 'Waiting for user approval',
                 parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
