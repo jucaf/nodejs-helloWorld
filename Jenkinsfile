@@ -32,8 +32,7 @@ import com.evobanco.NodejsConstants
     def isPPCJenkinsYaml = false
     def isPPCOpenshiftTemplate = false
     def jenkinsFilePathPPC = relativeTargetDirPPC + 'Jenkinsfile'
-    //def jenkinsYamlPathPPC = relativeTargetDirPPC + 'Jenkins.yml'
-    jenkinsYamlPathPPC = 'Jenkins.yml'
+    def jenkinsYamlPathPPC = relativeTargetDirPPC + 'Jenkins.yml'
     def openshiftNodejsTemplatePathPPC = relativeTargetDirPPC + 'kube/nodejs_template.yaml'
     def jenknsFilePipelinePPC
 
@@ -209,7 +208,7 @@ import com.evobanco.NodejsConstants
 
                     echo "Node.js generic configuration project loading"
 
-/*
+
                     retry (3) {
                         checkout([$class                           : 'GitSCM',
                                   branches                         : [[name: branchGenericPGC]],
@@ -220,7 +219,7 @@ import com.evobanco.NodejsConstants
                                   userRemoteConfigs                : [[credentialsId: credentialsIdGenericPGC,
                                                                        url          : gitDefaultProjectConfigurationPath]]])
                     }
-*/
+
                     echo "Node.js generic configuration project loaded"
 
 
