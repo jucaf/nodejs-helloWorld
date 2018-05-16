@@ -352,8 +352,6 @@ import com.evobanco.NodejsConstants
                 }
 
 
-cont = input message: 'Waiting for user approval',
-parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
                 if (branchType in params.testing.predeploy.sonarQube) {
                     stage('SonarQube') {
@@ -383,10 +381,14 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
                     echo "Skipping Running SonarQube..."
                 }
 
+                cont = input message: 'Waiting for user approval',
+                parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+
 
                 stage('Artifact Deploy') {
                     echo "Deploying artifact to Artifactory..."
                     withNPM(npmrcConfig: 'my-custom-npmrc') {
+                        sh 'npm whoami'
                         sh 'npm publish'
                     }
                 }
@@ -394,8 +396,6 @@ parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose 
 
 
 
-                cont = input message: 'Waiting for user approval',
-                parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
 
