@@ -5,7 +5,7 @@ openshift:
 confirmDeploy:
   - master
 timeoutConfirmDeploy: true
-timeoutConfirmDeployTime: 30
+timeoutConfirmDeployTime: 33
 timeoutConfirmDeployUnit: MINUTES
 
 testing:
@@ -49,6 +49,6 @@ notifications:
 type: slack
 
 jenkins:
-  maxOldBuildsToKeep: 10
+  maxOldBuildsToKeep: 12
   daysOldBuildsToKeep: 0
   errorOnPostDeployTestsUnstableResult: true
