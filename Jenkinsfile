@@ -259,7 +259,19 @@ import com.evobanco.NodejsConstants
                 env.PATH = "${node}/bin:${env.PATH}"
 
                 sh "node -v"
+
             }
+
+
+            stage('TEST npm whoami') {
+                withNPM(npmrcConfig: 'my-custom-npmrc') {
+                    sh 'npm whoami'
+                }
+            }
+
+cont = input message: 'Waiting for user approval',
+parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+
 
 
             stage('Prepare') {
@@ -299,8 +311,6 @@ import com.evobanco.NodejsConstants
 //            {
 
 
-cont = input message: 'Waiting for user approval',
-parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
                 stage('Build') {
                     echo 'Building dependencies...'
