@@ -293,6 +293,10 @@ import com.evobanco.NodejsConstants
 //            if (branchName != 'master')
 //            {
 
+def cont = 'Yes'
+cont = input message: 'Waiting for user approval',
+parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+
                 stage('Build') {
                     echo 'Building dependencies...'
                     sh 'npm i'
@@ -357,9 +361,12 @@ import com.evobanco.NodejsConstants
                 }
 
 
+
+
                 def cont = 'Yes'
                 cont = input message: 'Waiting for user approval',
                 parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+
 
 
 
