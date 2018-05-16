@@ -264,9 +264,9 @@ import com.evobanco.NodejsConstants
 
 
             stage('TEST npm whoami') {
-                withNPM(npmrcConfig: 'my-custom-npmrc') {
+                //withNPM(npmrcConfig: 'my-custom-npmrc') {
                     sh 'npm whoami'
-                }
+                //}
             }
 
 cont = input message: 'Waiting for user approval',
