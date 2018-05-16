@@ -13,7 +13,7 @@ testing:
     unitTesting:
       - feature
       - develop
-      - release
+     # - release
       - hotfix
       - master
     sonarQube:
@@ -40,8 +40,8 @@ testing:
       - develop
       - release
 
-npmRepositoryDeploy:
-  - release
+npmRegistryDeploy:
+  # - release
 
 notifications:
   branch:
