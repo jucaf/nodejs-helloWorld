@@ -320,7 +320,9 @@ import com.evobanco.NodejsConstants
                     stage('Test') {
 
                         echo 'Installing jest'
-                        sh 'npm i -D jest'
+                        withNPM(npmrcConfig: 'my-custom-npmrc') {
+                            sh 'npm i -D jest'
+                        }
 
                         echo 'Installing jest-sonar-reporter'
                         withNPM(npmrcConfig: 'my-custom-npmrc') {
