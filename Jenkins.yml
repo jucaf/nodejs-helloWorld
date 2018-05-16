@@ -39,8 +39,8 @@ testing:
       - develop
       - release
 
-npmRepositoryDeploy:
-  - release
+npmRegistryDeploy:
+  # - release
 
 notifications:
   branch:

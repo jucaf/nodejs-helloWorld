@@ -385,7 +385,7 @@ import com.evobanco.NodejsConstants
                 parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
-                if (branchType in params.npmRepositoryDeploy) {
+                if (branchType in params.npmRegistryDeploy) {
 
                     stage('Artifact Deploy') {
                         echo "Deploying artifact to Artifactory..."
@@ -421,7 +421,11 @@ import com.evobanco.NodejsConstants
 
                 echo "Building image on OpenShift..."
 
-                openshiftCheckAndCreateProject {
+                def my_sourceRepositoryURL = "https://github.com/isanmartin0/nodejs-helloWorld"
+                def my_sourceRepositoryBranch = "release/1.0.0"
+                def my_npmMirror = ""
+                def my_nodejsVersion = 6
+                nodejsOpenshiftCheckAndCreateProject {
                     oseCredential = openshiftCredential
                     cloudURL = openshiftURL
                     environment = envLabel
@@ -431,6 +435,10 @@ import com.evobanco.NodejsConstants
                     branchHY = branchNameHY
                     branch_type = branchType
                     dockerRegistry = registry
+                    sourceRepositoryURL = my_sourceRepositoryURL
+                    sourceRepositoryBranch = my_sourceRepositoryBranch
+                    npmMirror = my_npmMirror
+                    nodejsVersion = my_nodejsVersion
                 }
 
 
