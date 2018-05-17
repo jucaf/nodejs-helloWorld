@@ -485,7 +485,7 @@ import com.evobanco.NodejsConstants
                     sleep(10)
                 }
 
-                openshiftBuildProject {
+                nodejsOpenshiftBuildProject {
                     repoUrl = artifactoryRepoURL
                     branchHY = branchNameHY
                     branch_type = branchType
