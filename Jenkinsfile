@@ -302,6 +302,35 @@ import com.evobanco.NodejsConstants
 
             }
 
+            stage ('Prepare profiles') {
+                switch (branchType) {
+                    case 'feature':
+                        echo "Detect feature type branch"
+                        envLabel="dev"
+                        break
+                    case 'develop':
+                        echo "Detect develop type branch"
+                        envLabel="dev"
+                        break
+                    case 'release':
+                        echo "Detect release type branch"
+                        envLabel="uat"
+                        break
+                    case 'master':
+                        echo "Detect master type branch"
+                        envLabel="pro"
+                        break
+                    case 'hotfix':
+                        echo "Detect hotfix type branch"
+                        envLabel="uat"
+                        break
+                }
+
+                echo "Environmen selected: ${envLabel}"
+            }
+
+
+
 
 
 //            if (branchName != 'master')
