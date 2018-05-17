@@ -23,7 +23,7 @@ function validateCourse(course) {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello world!!');
+    res.send('Hello world develop!!');
 });
 
 app.get('/api/courses', (req, res) => {
