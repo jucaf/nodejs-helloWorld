@@ -13,7 +13,7 @@ metadata:
     template.openshift.io/bindable: "false"
 message: "The following service(s) have been created in your project: ${PROJECT}."
 labels:
-  app: ${PROJECT}
+  template: Nodejs-template
 objects:
 - apiVersion: v1
   kind: ImageStream
