@@ -10,6 +10,9 @@ import com.evobanco.NodejsConstants
 
     def artifactorySnapshotsURL = 'https://digitalservices.evobanco.com/artifactory/libs-snapshot-local'
     def artifactoryReleasesURL = 'https://digitalservices.evobanco.com/artifactory/libs-release-local'
+
+    def npmRepositoryURL = 'https://digitalservices.evobanco.com/artifactory/npm-release-local'
+
     def sonarQube = 'http://sonarqube:9000'
     def openshiftURL = 'https://openshift.grupoevo.corp:8443'
     def openshiftCredential = 'openshift'
@@ -486,7 +489,7 @@ import com.evobanco.NodejsConstants
                 }
 
                 nodejsOpenshiftBuildProject {
-                    repoUrl = artifactoryRepoURL
+                    repoUrl = npmRepositoryURL
                     branchHY = branchNameHY
                     branch_type = branchType
                 }
