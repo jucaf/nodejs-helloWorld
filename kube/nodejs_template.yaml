@@ -93,7 +93,6 @@ objects:
       metadata:
         annotations:
           openshift.io/generated-by: OpenShiftNewApp
-        creationTimestamp: null
         labels:
           app: ${PROJECT}
           deploymentconfig: ${PROJECT}
@@ -105,25 +104,6 @@ objects:
           ports:
           - containerPort: 8080
             protocol: TCP
-          resources:
-            limits:
-              cpu: 500m
-              memory: 1000Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
-          readinessProbe:
-            timeoutSeconds: 3
-            initialDelaySeconds: 3
-            httpGet:
-              path: /
-              port: 8080
-          livenessProbe:
-            timeoutSeconds: 3
-            initialDelaySeconds: 30
-            httpGet:
-              path: /
-              port: 8080
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         dnsPolicy: ClusterFirst
