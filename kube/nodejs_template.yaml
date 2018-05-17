@@ -171,7 +171,6 @@ objects:
   metadata:
     annotations:
       openshift.io/generated-by: OpenShiftNewApp
-    creationTimestamp: null
     labels:
       app: ${PROJECT}
     name: ${PROJECT}
