@@ -326,7 +326,7 @@ import com.evobanco.NodejsConstants
                         break
                 }
 
-                echo "Environmen selected: ${envLabel}"
+                echo "Environment selected: ${envLabel}"
             }
 
 
