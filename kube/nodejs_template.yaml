@@ -10,8 +10,8 @@ metadata:
     openshift.io/long-description: This template defines resources needed to develop a NodeJS application, including a build configuration and application deployment configuration.  It does not include a database.
     openshift.io/provider-display-name: Red Hat, Inc.
     openshift.io/support-url: https://access.redhat.com
-    template.openshift.io/bindable: false
-message: The following service(s) have been created in your project: ${PROJECT}.
+    template.openshift.io/bindable: "false"
+message: "The following service(s) have been created in your project: ${PROJECT}."
 labels:
   app: ${PROJECT}
 objects:
@@ -30,44 +30,8 @@ objects:
   metadata:
     annotations:
       openshift.io/generated-by: OpenShiftNewApp
-    labels:
-      app: ${PROJECT}
-    name: ${PROJECT}
-  spec:
-    nodeSelector: null
-    output:
-      to:
-        kind: ImageStreamTag
-        name: ${PROJECT}:latest
-    postCommit: {}
-    resources: {}
-    runPolicy: Serial
-    source:
-      git:
-        ref: master
-        uri: https://github.com/jucaf/ews-bin-deploy.git
-      type: Git
-    strategy:
-      sourceStrategy:
-        env:
-        - name: WAR_FILE_URL
-          value: ${WAR_FILE_URL}
-        - name: ARTIFACTORY_TOKEN
-          value: ${ARTIFACTORY_TOKEN}
-        from:
-          kind: ImageStreamTag
-          name: jws-java-appdynamics:1.0
-          namespace: openshift
-      type: Source
-    triggers:
-    - type: ConfigChange
-- apiVersion: v1
-  kind: BuildConfig
-  metadata:
-    annotations:
-      openshift.io/generated-by: OpenShiftNewApp
       description: Defines how to build the application
-      template.alpha.openshift.io/wait-for-ready: true
+      template.alpha.openshift.io/wait-for-ready: "true"
     labels:
       app: ${PROJECT}
     name: ${PROJECT}
@@ -105,7 +69,7 @@ objects:
     annotations:
       openshift.io/generated-by: OpenShiftNewApp
       description: Defines how to deploy the application server
-      template.alpha.openshift.io/wait-for-ready: true
+      template.alpha.openshift.io/wait-for-ready: "true"
     generation: 1
     labels:
       app: ${PROJECT}
