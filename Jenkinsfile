@@ -472,6 +472,24 @@ import com.evobanco.NodejsConstants
 
 
 
+                /**************************************************************
+                 ************* ENVIRONMENT VARIABLES CREATION *****************
+                 **************************************************************/
+
+                retry(3) {
+                    nodejsOpenshiftEnvironmentVariables {
+                        branchHY = branchNameHY
+                        branch_type = branchType
+                    }
+
+                    sleep(10)
+                }
+
+                openshiftBuildProject {
+                    repoUrl = artifactoryRepoURL
+                    branchHY = branchNameHY
+                    branch_type = branchType
+                }
             }
 
 
