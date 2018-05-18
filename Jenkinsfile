@@ -70,7 +70,7 @@ import com.evobanco.NodejsConstants
 
 
     //Parameters nodejs
-    int default_port = 8080
+    int default_port = '8080'
 
     echo "BEGIN NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
@@ -453,7 +453,7 @@ import com.evobanco.NodejsConstants
                  ********************************************************/
                 //Parameters for creation Config Maps
                 Boolean useSpecificPort = false
-                int port_number = default_port
+                def port_number = default_port
                 Boolean createPortEnvironmentVariable = false
                 echo "params.ports.useSpecificPort: ${params.ports.useSpecificPort}"
                 echo "params.ports.portNumber: ${params.ports.portNumber}"
@@ -463,8 +463,8 @@ import com.evobanco.NodejsConstants
 
                 String portNumberParam = params.ports.portNumber
 
-                if (portNumberParam != null && portNumberParam.isInteger()) {
-                    port_number = portNumberParam as Integer
+                if (params.ports.portNumber) {
+                    port_number = portNumberParam
                 }
 
                 if (params.ports.useSpecificPort) {
