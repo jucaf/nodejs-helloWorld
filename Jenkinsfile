@@ -66,10 +66,11 @@ import com.evobanco.NodejsConstants
     def openshift_route_hostname = ''
     def openshift_route_hostname_with_protocol = ''
 
-
-
-
     def cont = 'Yes'
+
+
+    //Parameters nodejs
+    int default_port = 8080
 
     echo "BEGIN NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
@@ -447,6 +448,35 @@ import com.evobanco.NodejsConstants
 
             stage('OpenShift Build') {
 
+                /********************************************************
+                 ************* SPECIFIC PORT PARAMETERS *****************
+                 ********************************************************/
+                //Parameters for creation Config Maps
+                Boolean useSpecificPort = false
+                int port_number = default_port
+                Boolean createPortEnvironmentVariable = false
+                echo "params.ports.useSpecificPort: ${params.ports.useSpecificPort}"
+                echo "params.ports.portNumber: ${params.ports.portNumber}"
+                echo "params.ports.createPortEnvironmentVariable: ${params.ports.createPortEnvironmentVariable}"
+
+
+
+                String portNumberParam = params.ports.portNumber
+
+                if (portNumberParam != null && portNumberParam.isInteger()) {
+                    port_number = portNumberParam as Integer
+                }
+
+                if (params.ports.useSpecificPort) {
+                    useSpecificPort = params.ports.useSpecificPort.toBoolean()
+                }
+
+                if (params.ports.createPortEnvironmentVariable) {
+                    createPortEnvironmentVariable = params.ports.createPortEnvironmentVariable.toBoolean()
+                }
+
+
+
                 /**********************************************************
                  ************* OPENSHIFT PROJECT CREATION *****************
                  **********************************************************/
@@ -457,6 +487,7 @@ import com.evobanco.NodejsConstants
                 def my_sourceRepositoryBranch = "release/1.0.0"
                 def my_npmMirror = ""
                 def my_nodejsVersion = 6
+
                 nodejsOpenshiftCheckAndCreateProject {
                     oseCredential = openshiftCredential
                     cloudURL = openshiftURL
@@ -471,6 +502,7 @@ import com.evobanco.NodejsConstants
                     sourceRepositoryBranch = my_sourceRepositoryBranch
                     npmMirror = my_npmMirror
                     nodejsVersion = my_nodejsVersion
+                    portNumber = port_number
                 }
 
 
