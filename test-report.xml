@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/inigosanmartin/IdeaProjects/nodejs-helloWorld/__tests__/test-utils.js">
+    <testCase name="add two numbers shoud be 1 + 1 = 2" duration="2"/>
+    <testCase name="add two numbers shoud be -1 + 1 = 0" duration="0"/>
+    <testCase name="add two numbers shoud be 0 + 0 = 0" duration="0"/>
+    <testCase name="add two numbers shoud be 1.5 + 1 = 2.5" duration="0"/>
+    <testCase name="add two numbers shoud be -1 + -1 = -2" duration="1"/>
+    <testCase name="divide two numbers shoud be 1 / 1 = 1" duration="0"/>
+    <testCase name="divide two numbers shoud be -1 / 1 = -1" duration="0"/>
+    <testCase name="divide two numbers shoud be 1.5 / 1 = 1.5" duration="1"/>
+    <testCase name="divide two numbers shoud be -1 / -1 = 1" duration="0"/>
+    <testCase name="multiply two numbers shoud be 1 * 1 = 1" duration="0"/>
+    <testCase name="multiply two numbers shoud be -1 * 1 = -1" duration="0"/>
+    <testCase name="multiply two numbers shoud be 0 * 0 = 0" duration="1"/>
+    <testCase name="multiply two numbers shoud be 1.5 * 1.5 = 2.25" duration="0"/>
+    <testCase name="multiply two numbers shoud be -1 * -1 = 1" duration="0"/>
+    <testCase name="subtract two numbers shoud be 1 - 1 = 0" duration="0"/>
+    <testCase name="subtract two numbers shoud be -1 - 1 = -2" duration="0"/>
+    <testCase name="subtract two numbers shoud be 0 - 0 = 0" duration="2"/>
+    <testCase name="subtract two numbers shoud be 1.5 - 1 = .5" duration="0"/>
+    <testCase name="subtract two numbers shoud be -1 - -1 = 0" duration="0"/>
+  </file>
+</testExecutions>
