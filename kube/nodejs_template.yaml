@@ -144,7 +144,7 @@ objects:
     - name: 8080-tcp
       port: 8080
       protocol: TCP
-      targetPort: "${TARGET_PORT}"
+      targetPort: ${{TARGET_PORT}}
     selector:
       app: ${PROJECT}
       deploymentconfig: ${PROJECT}
