@@ -463,7 +463,7 @@ import com.evobanco.NodejsConstants
 
                 String portNumberParam = params.ports.portNumber
 
-                if (params.ports.portNumber != null && params.ports.portNumber.isInteger()) {
+                if (portNumberParam != null && portNumberParam.isInteger()) {
                     port_number = portNumberParam as Integer
                 }
 
