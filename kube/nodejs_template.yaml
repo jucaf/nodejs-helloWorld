@@ -144,7 +144,7 @@ objects:
     - name: 8080-tcp
       port: 8080
       protocol: TCP
-      targetPort: 8080
+      targetPort: ${TARGET_PORT}
     selector:
       app: ${PROJECT}
       deploymentconfig: ${PROJECT}
@@ -228,4 +228,7 @@ parameters:
   value: ""
 - description: "Maximum number of replicas of pods"
   name: "MAX_POD_REPLICAS"
+  value: ""
+- description: "Target port of service"
+  name: "TARGET_PORT"
   value: ""
