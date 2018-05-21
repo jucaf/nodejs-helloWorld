@@ -515,6 +515,8 @@ import com.evobanco.NodejsConstants
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
                         branch_type = branchType
+                        createPortEnvironmentVariableOpenshift = createPortEnvironmentVariable
+                        portNumber = port_number
                     }
 
                     sleep(10)
