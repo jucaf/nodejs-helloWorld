@@ -4,7 +4,7 @@
   "description": "Hello World on Node js",
   "main": "app.js",
   "scripts": {
-    "start": "node src/api.js",
+    "start": "node server/api.js",
     "test": "jest"
   },
   "jest": {
@@ -12,7 +12,7 @@
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "server/**/*.{js,jsx}",
       "!**/coverage/**",
       "!**/node_modules/**",
       "!**/.vscode/**",
