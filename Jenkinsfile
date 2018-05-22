@@ -547,7 +547,7 @@ import com.evobanco.NodejsConstants
                 echo "Building image on OpenShift..."
 
                 def my_sourceRepositoryURL = "https://github.com/isanmartin0/nodejs-helloWorld"
-                def my_sourceRepositoryBranch = "release/1.0.0"
+                def my_sourceRepositoryBranch = "release/2.0.0"
                 def my_npmMirror = ""
                 def my_nodejsVersion = 6
 
