@@ -460,18 +460,18 @@ import com.evobanco.NodejsConstants
                 echo "params.ports.createPortEnvironmentVariable: ${params.ports.createPortEnvironmentVariable}"
 
 
-
-                String portNumberParam = params.ports.portNumber
-
-                if (portNumberParam != null && portNumberParam.isInteger()) {
-                    port_number = portNumberParam as Integer
-                }
-
                 if (params.ports.useSpecificPort) {
                     useSpecificPort = params.ports.useSpecificPort.toBoolean()
                 }
 
-                if (params.ports.createPortEnvironmentVariable) {
+                String portNumberParam = params.ports.portNumber
+
+                if (portNumberParam != null && portNumberParam.isInteger() && useSpecificPort) {
+                    port_number = portNumberParam as Integer
+                }
+
+
+                if (params.ports.createPortEnvironmentVariable && useSpecificPort) {
                     createPortEnvironmentVariable = params.ports.createPortEnvironmentVariable.toBoolean()
                 }
 
