@@ -2,7 +2,7 @@
   "name": "keedio-nodejs-helloworld",
   "version": "1.0.1",
   "description": "Hello World on Node js",
-  "main": "app.js",
+  "main": "server/api.js",
   "scripts": {
     "start": "node server/api.js",
     "test": "jest",
