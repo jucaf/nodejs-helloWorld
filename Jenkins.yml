@@ -43,10 +43,11 @@ testing:
 npmRegistryDeploy:
   # - release
 
+
 ports:
-  useSpecificPort: false
+  useSpecificPort: true
   portNumber: 3000
-  createPortEnvironmentVariable: false
+  createPortEnvironmentVariable: true
 
 notifications:
   branch:
