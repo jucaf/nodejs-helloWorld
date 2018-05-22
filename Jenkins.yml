@@ -4,6 +4,7 @@ openshift:
 npmRegistryDeploy:
   # - release
 
+imageStreamNodejsVersion: 8
 devMode: false
 debugPort: 5858
 useNpmMirror: false
