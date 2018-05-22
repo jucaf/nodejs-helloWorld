@@ -572,24 +572,16 @@ import com.evobanco.NodejsConstants
                 /**************************************************************
                  ************* ENVIRONMENT VARIABLES CREATION *****************
                  **************************************************************/
-/*
+
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
                         branch_type = branchType
-                        createPortEnvironmentVariableOpenshift = createPortEnvironmentVariable
-                        portNumber = port_number
-                        devModeOpenshift = devMode
-                        debugPortOpenshift = debug_port_number
-                        useNpmMirrorOpenshift = useNpmMirror
-                        npmMirrorOpenshift = npmMirror
-                        useAlternateNpmRunOpenshift = useAlternateNpmRun
-                        alternateNpmRunScriptOpenshift = alternateNpmRunScript
                     }
 
                     sleep(10)
                 }
-*/
+
                 nodejsOpenshiftBuildProject {
                     repoUrl = npmRepositoryURL
                     branchHY = branchNameHY
