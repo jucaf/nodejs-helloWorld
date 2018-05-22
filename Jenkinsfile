@@ -563,7 +563,7 @@ import com.evobanco.NodejsConstants
                     dockerRegistry = registry
                     sourceRepositoryURL = my_sourceRepositoryURL
                     sourceRepositoryBranch = my_sourceRepositoryBranch
-                    npmMirror = my_npm_mirror
+                    npmMirror = ''
                     nodejsVersion = my_node_version
                     portNumber = port_number
                 }
