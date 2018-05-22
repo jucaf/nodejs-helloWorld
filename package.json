@@ -5,8 +5,7 @@
   "main": "server/api.js",
   "scripts": {
     "start": "node server/api.js",
-    "test": "jest",
-    "prueba": "node server/app.js"
+    "test": "jest"
   },
   "jest": {
     "testResultsProcessor": "jest-sonar-reporter",
