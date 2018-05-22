@@ -66,14 +66,13 @@ import com.evobanco.NodejsConstants
     def openshift_route_hostname = ''
     def openshift_route_hostname_with_protocol = ''
 
+    def cont = 'Yes'
 
 
     //Parameters nodejs
     int port_default = 8080
     int debug_port_default = 5858
     int image_stream_nodejs_version_default = 8
-
-    def cont = 'Yes'
 
     echo "BEGIN NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
@@ -451,7 +450,6 @@ import com.evobanco.NodejsConstants
 
             stage('OpenShift Build') {
 
-
                 /********************************************************
                  ************* SPECIFIC PORT PARAMETERS *****************
                  ********************************************************/
@@ -574,7 +572,6 @@ import com.evobanco.NodejsConstants
                 /**************************************************************
                  ************* ENVIRONMENT VARIABLES CREATION *****************
                  **************************************************************/
-
 /*
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
@@ -593,7 +590,6 @@ import com.evobanco.NodejsConstants
                     sleep(10)
                 }
 */
-
                 nodejsOpenshiftBuildProject {
                     repoUrl = npmRepositoryURL
                     branchHY = branchNameHY
