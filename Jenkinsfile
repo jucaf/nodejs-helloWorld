@@ -68,6 +68,10 @@ import com.evobanco.NodejsConstants
 
 
 
+    //Parameters nodejs
+    int port_default = 8080
+    int debug_port_default = 5858
+    int image_stream_nodejs_version_default = 8
 
     def cont = 'Yes'
 
@@ -446,6 +450,97 @@ import com.evobanco.NodejsConstants
 
 
             stage('OpenShift Build') {
+
+
+                /********************************************************
+                 ************* SPECIFIC PORT PARAMETERS *****************
+                 ********************************************************/
+                Boolean useSpecificPort = false
+                int port_number = port_default
+                Boolean createPortEnvironmentVariable = false
+                echo "params.ports.useSpecificPort: ${params.ports.useSpecificPort}"
+                echo "params.ports.portNumber: ${params.ports.portNumber}"
+                echo "params.ports.createPortEnvironmentVariable: ${params.ports.createPortEnvironmentVariable}"
+
+
+                if (params.ports.useSpecificPort) {
+                    useSpecificPort = params.ports.useSpecificPort.toBoolean()
+                }
+
+                String portNumberParam = params.ports.portNumber
+                if (portNumberParam != null && portNumberParam.isInteger() && useSpecificPort) {
+                    port_number = portNumberParam as Integer
+                }
+
+
+                if (params.ports.createPortEnvironmentVariable && useSpecificPort) {
+                    createPortEnvironmentVariable = params.ports.createPortEnvironmentVariable.toBoolean()
+                }
+
+
+                /***************************************************
+                 ************* DEV MODE PARAMETERS *****************
+                 ***************************************************/
+                Boolean devMode = false
+                int debug_port_number = debug_port_default
+                echo "params.devMode: ${params.devMode}"
+                echo "params.debugPort: ${params.debugPort}"
+
+                if (params.devMode) {
+                    devMode = params.devMode.toBoolean()
+                }
+
+                String debugPortParam = params.debugPort
+                if (debugPortParam != null && debugPortParam.isInteger() && devMode) {
+                    debug_port_number = debugPortParam as Integer
+                }
+
+
+                /***************************************************
+                 ************* NPM MIRROR PARAMETERS *****************
+                 ***************************************************/
+                Boolean useNpmMirror = false
+                def npmMirror = ''
+                echo "params.useNpmMirror: ${params.useNpmMirror}"
+                echo "params.npmMirror: ${params.npmMirror}"
+
+                if (params.useNpmMirror) {
+                    useNpmMirror = params.useNpmMirror.toBoolean()
+                }
+
+                if (useNpmMirror) {
+                    npmMirror = params.npmMirror
+                }
+
+
+                /*******************************************************************
+                 ************* NPM RUN ALTERNATE SCRIPT PARAMETERS *****************
+                 *******************************************************************/
+                Boolean useAlternateNpmRun = false
+                def alternateNpmRunScript = ''
+                echo "params.useAlternateNpmRun: ${params.useAlternateNpmRun}"
+                echo "params.alternateNpmRunScript: ${params.alternateNpmRunScript}"
+
+                if (params.useAlternateNpmRun) {
+                    useAlternateNpmRun = params.useAlternateNpmRun.toBoolean()
+                }
+
+                if (useAlternateNpmRun) {
+                    alternateNpmRunScript = params.alternateNpmRunScript
+                }
+
+
+                /*************************************************************
+                 ************* IMAGE STREAM TAG NODE VERSION *****************
+                 *************************************************************/
+                int image_stream_nodejs_version = image_stream_nodejs_version_default
+                echo "params.imageStreamNodejsVersion: ${params.imageStreamNodejsVersion}"
+
+                String imageStreamNodejsVersionParam = params.imageStreamNodejsVersion
+                if (imageStreamNodejsVersionParam != null && debugPortParam.isInteger()) {
+                    image_stream_nodejs_version = imageStreamNodejsVersionParam as Integer
+                }
+
 
                 /**********************************************************
                  ************* OPENSHIFT PROJECT CREATION *****************
