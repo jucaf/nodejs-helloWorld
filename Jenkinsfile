@@ -572,7 +572,7 @@ import com.evobanco.NodejsConstants
                 /**************************************************************
                  ************* ENVIRONMENT VARIABLES CREATION *****************
                  **************************************************************/
-
+/*
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
@@ -589,7 +589,7 @@ import com.evobanco.NodejsConstants
 
                     sleep(10)
                 }
-
+*/
                 nodejsOpenshiftBuildProject {
                     repoUrl = npmRepositoryURL
                     branchHY = branchNameHY
