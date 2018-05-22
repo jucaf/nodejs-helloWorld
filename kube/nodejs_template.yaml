@@ -55,7 +55,7 @@ objects:
           value: ${NPM_MIRROR}
         from:
           kind: ImageStreamTag
-          name: nodejs:${NODEJS_VERSION}
+          name: nodejs:6
           namespace: openshift
     output:
       to:
@@ -102,7 +102,7 @@ objects:
         - image: "${DOCKER_REGISTRY}:5000/${PROJECT}${BRANCH_NAME_HY_CONTAINER_IMAGE}/${PROJECT}:latest"
           name: ${PROJECT}
           ports:
-          - containerPort: ${{TARGET_PORT}}
+          - containerPort: 8080
             protocol: TCP
           resources:
             limits:
@@ -116,13 +116,13 @@ objects:
             initialDelaySeconds: 3
             httpGet:
               path: /
-              port: ${{TARGET_PORT}}
+              port: 8080
           livenessProbe:
             timeoutSeconds: 3
             initialDelaySeconds: 30
             httpGet:
               path: /
-              port: ${{TARGET_PORT}}
+              port: 8080
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         dnsPolicy: ClusterFirst
@@ -141,10 +141,10 @@ objects:
     name: ${PROJECT}
   spec:
     ports:
-    - name: ${TARGET_PORT}-tcp
-      port: ${{TARGET_PORT}}
+    - name: 8080-tcp
+      port: 8080
       protocol: TCP
-      targetPort: ${{TARGET_PORT}}
+      targetPort: 8080
     selector:
       app: ${PROJECT}
       deploymentconfig: ${PROJECT}
@@ -159,7 +159,7 @@ objects:
   spec:
     host: "${PROJECT}${HOST_NAME}"
     port:
-      targetPort: ${TARGET_PORT}-tcp
+      targetPort: 8080-tcp
     to:
       kind: Service
       name: ${PROJECT}
