@@ -54,8 +54,8 @@ testing:
 
 
 ports:
-  useSpecificPort: false
-  portNumber: 3000
+  useSpecificPort: true
+  portNumber: 8080
   createPortEnvironmentVariable: false
 
 notifications:
