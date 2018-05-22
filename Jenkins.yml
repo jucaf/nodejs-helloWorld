@@ -43,6 +43,9 @@ testing:
 npmRegistryDeploy:
   # - release
 
+devMode: false
+debugPort: 5858
+npmMirror:
 
 ports:
   useSpecificPort: true
