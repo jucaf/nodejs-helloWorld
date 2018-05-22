@@ -549,6 +549,7 @@ import com.evobanco.NodejsConstants
                 def my_sourceRepositoryURL = "https://github.com/isanmartin0/nodejs-helloWorld"
                 def my_sourceRepositoryBranch = "release/1.0.0"
                 int my_node_version = 6
+                def my_npm_mirror = ''
 
                 nodejsOpenshiftCheckAndCreateProject {
                     oseCredential = openshiftCredential
@@ -562,7 +563,7 @@ import com.evobanco.NodejsConstants
                     dockerRegistry = registry
                     sourceRepositoryURL = my_sourceRepositoryURL
                     sourceRepositoryBranch = my_sourceRepositoryBranch
-                    npmMirror = npmMirror
+                    npmMirror = my_npm_mirror
                     nodejsVersion = my_node_version
                     portNumber = port_number
                 }
