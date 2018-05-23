@@ -584,7 +584,7 @@ import com.evobanco.NodejsConstants
                  ************* ENVIRONMENT VARIABLES CREATION *****************
                  **************************************************************/
 
-
+                echo "Creating environment variables"
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
