@@ -498,7 +498,7 @@ import com.evobanco.NodejsConstants
                  ************* NPM MIRROR PARAMETERS *****************
                  ***************************************************/
                 Boolean useNpmMirror = false
-                def npmMirror = ''
+                def theNpmMirror =
                 echo "params.useNpmMirror: ${params.useNpmMirror}"
                 echo "params.npmMirror: ${params.npmMirror}"
 
@@ -507,7 +507,7 @@ import com.evobanco.NodejsConstants
                 }
 
                 if (useNpmMirror) {
-                    npmMirror = params.npmMirror
+                    theNpmMirror = params.npmMirror
                 }
 
 
@@ -583,7 +583,7 @@ import com.evobanco.NodejsConstants
                         devModeOpenshift = devMode
                         debugPortOpenshift = debug_port_number
                         useNpmMirrorOpenshift = useNpmMirror
-                        npmMirrorOpenshift = npmMirror
+                        npmMirrorOpenshift = my_npmMirror
                         useAlternateNpmRunOpenshift = useAlternateNpmRun
                         alternateNpmRunScriptOpenshift = alternateNpmRunScript
                     }
