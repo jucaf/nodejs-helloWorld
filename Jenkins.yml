@@ -4,11 +4,11 @@ openshift:
 npmRegistryDeploy:
   # - release
 
-imageStreamNodejsVersion: 4
+imageStreamNodejsVersion: 8
 #devMode: false
 #debugPort: 5858
-#useNpmMirror: false
-#npmMirror: https://registry.npmjs.org/
+useNpmMirror: true
+npmMirror: https://registry.npmjs.org/
 #useAlternateNpmRun: false
 #alternateNpmRunScript: prueba
 
