@@ -489,6 +489,16 @@ import com.evobanco.NodejsConstants
                 }
 
                 String debugPortParam = params.debugPort
+
+
+
+                if(debugPortParam != null) {
+                    echo "NO ES null"
+                } else {
+                    echo "ES NULL"
+                }
+                echo "debugPortParam: ${debugPortParam}"
+
                 if (debugPortParam != null && debugPortParam.isInteger() && devMode) {
                     debug_port_number = debugPortParam as Integer
                 }
