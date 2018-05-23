@@ -4,7 +4,7 @@ openshift:
 npmRegistryDeploy:
   # - release
 
-#imageStreamNodejsVersion: 6
+imageStreamNodejsVersion: 6
 #devMode: false
 #debugPort: 5858
 #useNpmMirror: false
@@ -54,9 +54,9 @@ testing:
 
 
 ports:
-  useSpecificPort: false
-  portNumber: 8080
-  createPortEnvironmentVariable: false
+  useSpecificPort: true
+  portNumber: 3000
+  createPortEnvironmentVariable: true
 
 notifications:
   branch:
