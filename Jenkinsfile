@@ -416,8 +416,8 @@ import com.evobanco.NodejsConstants
                     echo "Skipping Running SonarQube..."
                 }
 
-                cont = input message: 'Waiting for user approval',
-                parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
+                //cont = input message: 'Waiting for user approval',
+                //parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build')]
 
 
                 if (branchType in params.npmRegistryDeploy) {
@@ -536,7 +536,7 @@ import com.evobanco.NodejsConstants
                 echo "params.imageStreamNodejsVersion: ${params.imageStreamNodejsVersion}"
 
                 String imageStreamNodejsVersionParam = params.imageStreamNodejsVersion
-                if (imageStreamNodejsVersionParam != null && debugPortParam.isInteger()) {
+                if (imageStreamNodejsVersionParam != null && imageStreamNodejsVersionParam.isInteger()) {
                     image_stream_nodejs_version = imageStreamNodejsVersionParam as Integer
                 }
 
@@ -565,8 +565,8 @@ import com.evobanco.NodejsConstants
                     sourceRepositoryURL = my_sourceRepositoryURL
                     sourceRepositoryBranch = my_sourceRepositoryBranch
                     portNumber = port_number
-                    npmMirror = my_npmMirror
-                    nodejsVersion = my_nodejsVersion
+                    npmMirror = theNpmMirror
+                    nodejsVersion = image_stream_nodejs_version
                 }
 
 
@@ -576,6 +576,7 @@ import com.evobanco.NodejsConstants
                  **************************************************************/
 
                 echo "Creating environment variables"
+
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
