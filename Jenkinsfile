@@ -563,8 +563,8 @@ import com.evobanco.NodejsConstants
                     dockerRegistry = registry
                     sourceRepositoryURL = my_sourceRepositoryURL
                     sourceRepositoryBranch = my_sourceRepositoryBranch
-                    npmMirror = my_npmMirror
-                    nodejsVersion = my_nodejsVersion
+                    npmMirror = theNpmMirror
+                    nodejsVersion = image_stream_nodejs_version
                 }
 
 
@@ -573,7 +573,7 @@ import com.evobanco.NodejsConstants
                  ************* ENVIRONMENT VARIABLES CREATION *****************
                  **************************************************************/
 
-/*
+
                 retry(3) {
                     nodejsOpenshiftEnvironmentVariables {
                         branchHY = branchNameHY
@@ -583,14 +583,14 @@ import com.evobanco.NodejsConstants
                         devModeOpenshift = devMode
                         debugPortOpenshift = debug_port_number
                         useNpmMirrorOpenshift = useNpmMirror
-                        npmMirrorOpenshift = my_npmMirror
+                        npmMirrorOpenshift = theNpmMirror
                         useAlternateNpmRunOpenshift = useAlternateNpmRun
                         alternateNpmRunScriptOpenshift = alternateNpmRunScript
                     }
 
                     sleep(10)
                 }
-*/
+
 
                 nodejsOpenshiftBuildProject {
                     repoUrl = npmRepositoryURL
