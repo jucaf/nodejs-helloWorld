@@ -490,19 +490,9 @@ import com.evobanco.NodejsConstants
 
                 String debugPortParam = params.debugPort
 
-
-
-                if(debugPortParam != null) {
-                    echo "NO ES null"
-                } else {
-                    echo "ES NULL"
+                if (debugPortParam != null && debugPortParam.isInteger() && devMode) {
+                    debug_port_number = debugPortParam as Integer
                 }
-                echo "debugPortParam: ${debugPortParam}"
-
-
-                //if (debugPortParam != null && debugPortParam.isInteger() && devMode) {
-                //    debug_port_number = debugPortParam as Integer
-                //}
 
 
                 /***************************************************
@@ -575,8 +565,8 @@ import com.evobanco.NodejsConstants
                     sourceRepositoryURL = my_sourceRepositoryURL
                     sourceRepositoryBranch = my_sourceRepositoryBranch
                     portNumber = port_number
-                    npmMirror = theNpmMirror
-                    nodejsVersion = image_stream_nodejs_version
+                    npmMirror = my_npmMirror
+                    nodejsVersion = my_nodejsVersion
                 }
 
 
