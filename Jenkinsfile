@@ -498,7 +498,7 @@ import com.evobanco.NodejsConstants
                  ************* NPM MIRROR PARAMETERS *****************
                  ***************************************************/
                 Boolean useNpmMirror = false
-                def theNpmMirror =
+                def theNpmMirror = ""
                 echo "params.useNpmMirror: ${params.useNpmMirror}"
                 echo "params.npmMirror: ${params.npmMirror}"
 
