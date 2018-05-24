@@ -5,11 +5,11 @@ npmRegistryDeploy:
   # - release
 
 imageStreamNodejsVersion: 8
-devMode: true
+devMode: false
 debugPort: 5858
 useNpmMirror: false
 npmMirror: https://registry.npmjs.org/
-useAlternateNpmRun: true
+useAlternateNpmRun: false
 alternateNpmRunScript: script_prueba
 
 
