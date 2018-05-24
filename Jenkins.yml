@@ -1,16 +1,23 @@
 openshift:
   templatePath: kube/template.yaml
 
-npmRegistryDeploy:
-  # - release
+
 
 imageStreamNodejsVersion: 8
 devMode: false
 debugPort: 5858
 useNpmMirror: false
 npmMirror: https://registry.npmjs.org/
-useAlternateNpmRun: false
+useAlternateNpmRun: true
 alternateNpmRunScript: script_prueba
+
+ports:
+  useSpecificPort: false
+  portNumber: 3000
+  createPortEnvironmentVariable: true
+
+npmRegistryDeploy:
+  # - release
 
 
 confirmDeploy:
@@ -50,13 +57,6 @@ testing:
     acceptanceTesting:
       - develop
       - release
-
-
-
-ports:
-  useSpecificPort: false
-  portNumber: 3000
-  createPortEnvironmentVariable: true
 
 notifications:
   branch:
