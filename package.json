@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-helloWorld",
+  "name": "keedio-nodejs-helloWorld",
   "version": "1.0.0",
   "description": "Hello World on Node js",
   "main": "app.js",
