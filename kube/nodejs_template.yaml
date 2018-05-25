@@ -53,8 +53,8 @@ objects:
           value: ${ARTIFACTORY_TOKEN}
         - name: NPM_MIRROR
           value: ${NPM_MIRROR}
-        - name: NODEJS_PACKAGE_NAME
-          value: ${NODEJS_PACKAGE_NAME}
+        - name: NODEJS_PACKAGE_TAG
+          value: ${NODEJS_PACKAGE_TAG}
         - name: NODEJS_IS_SCOPED_PACKAGE
           value: ${NODEJS_IS_SCOPED_PACKAGE}
         from:
@@ -236,8 +236,8 @@ parameters:
 - description: "Target port of service"
   name: "TARGET_PORT"
   value: ""
-- description: "Node module and version"
-  name: "NODEJS_PACKAGE_NAME"
+- description: "Node module tag"
+  name: "NODEJS_PACKAGE_TAG"
   value: ""
 - description: "Flag indicating a scoped package"
   name: "NODEJS_IS_SCOPED_PACKAGE"
