@@ -80,6 +80,9 @@ import com.evobanco.NodejsConstants
     int debug_port_default = 5858
     int image_stream_nodejs_version_default = 8
 
+    def build_from_registry_url = 'https://github.com/isanmartin0/s2i-nodejs-container.git'
+    def build_from_artifact_branch = 'master'
+
     echo "BEGIN NODE.JS GENERIC CONFIGURATION PROJECT (PGC)"
 
     node('nodejs') {
@@ -451,8 +454,16 @@ import com.evobanco.NodejsConstants
                             sh 'npm whoami'
                             //sh 'npm publish'
                         }
-                    }
 
+                        echo "Setting source code to build from URL (build from registry package)"
+                        echo "Source URL: ${projectURL} --> ${build_from_registry_url}"
+                        projectURL = build_from_registry_url
+                        echo "new projectURL: ${projectURL}"
+                        echo "Setting source code to build from branch (build from registry package)"
+                        echo "Source branch: ${branchName} --> ${build_from_artifact_branch}"
+                        branchName = build_from_artifact_branch
+                        echo "new branchName: ${branchName}"
+                    }
                 }
 
 
