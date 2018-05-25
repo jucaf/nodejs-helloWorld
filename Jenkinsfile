@@ -88,7 +88,7 @@ import com.evobanco.NodejsConstants
             echo 'Getting source code...'
             checkout scm
             projectURL = scm.userRemoteConfigs[0].url
-            echo 'Source code hosted in: ${projectURL}'
+            echo "Source code hosted in: ${projectURL}"
         }
 
 
