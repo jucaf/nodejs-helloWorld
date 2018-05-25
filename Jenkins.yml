@@ -2,7 +2,6 @@ openshift:
   templatePath: kube/template.yaml
 
 
-
 imageStreamNodejsVersion: 8
 devMode: false
 debugPort: 5858
@@ -19,9 +18,9 @@ ports:
 npmRegistryDeploy:
   - release
 
-
 confirmDeploy:
   - master
+
 timeoutConfirmDeploy: true
 timeoutConfirmDeployTime: 30
 timeoutConfirmDeployUnit: MINUTES
