@@ -50,7 +50,12 @@ import com.evobanco.NodejsConstants
 
     def packageJSON
     def projectURL
-    def moduleName
+    def packageName
+    def packageVersion
+    def packageTag
+    def isScopedPackage
+    def packageScope
+
 
     int maxOldBuildsToKeep = 0
     int daysOldBuildsToKeep = 0
@@ -106,11 +111,24 @@ import com.evobanco.NodejsConstants
             echo "projectURL: ${projectURL}"
 
 
-            moduleName = packageJSON.name
-            echo "moduleName: ${moduleName}"
+            packageName = packageJSON.name
+            echo "packageName: ${packageName}"
+            packageVersion = packageJSON.version
+            echo "packageVersion: ${packageVersion}"
+            packageTag = utils.getPackageTag(packageName, packageVersion)
+            echo "packageTag: ${packageTag}"
+            isScopedPackage = utils.isScopedPackage(packageName)
+            echo "isScopedPackage: ${isScopedPackage}"
+
+            if (isScopedPackage) {
+                packageScope = utils.getPackageScope(packageName)
+                echo "packageScope: ${packageScope}"
+            }
+
+
 /*
             try {
-                def parallelConfigurationProject = utils.getParallelConfigurationProjectURL(projectURL, moduleName)
+                def parallelConfigurationProject = utils.getParallelConfigurationProjectURL(projectURL, packageName)
 
                 echo "Node.js parallel configuration project ${parallelConfigurationProject} searching"
 
@@ -392,8 +410,8 @@ import com.evobanco.NodejsConstants
                     stage('SonarQube') {
                         echo "Running SonarQube..."
 
-                        def sonar_project_key = moduleName + "-" + branchNameHY
-                        def sonar_project_name = moduleName + "-" + branchNameHY
+                        def sonar_project_key = packageName + "-" + branchNameHY
+                        def sonar_project_name = packageName + "-" + branchNameHY
 
                         echo "sonar_project_key: ${sonar_project_key}"
                         echo "sonar_project_name: ${sonar_project_name}"
@@ -565,6 +583,8 @@ import com.evobanco.NodejsConstants
                     portNumber = port_number
                     npmMirror = theNpmMirror
                     nodejsVersion = image_stream_nodejs_version
+                    package_tag = packageTag
+                    is_scoped_package = isScopedPackage
                 }
 
 
