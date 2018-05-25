@@ -53,6 +53,7 @@ import com.evobanco.NodejsConstants
     def packageName
     def packageVersion
     def packageTag
+    def packageTarball
     def isScopedPackage
     def packageScope
 
@@ -117,6 +118,8 @@ import com.evobanco.NodejsConstants
             echo "packageVersion: ${packageVersion}"
             packageTag = utils.getPackageTag(packageName, packageVersion)
             echo "packageTag: ${packageTag}"
+            packageTarball = utils.getPackageTarball(packageName, packageVersion)
+            echo "packageTarball: ${packageTarball}"
             isScopedPackage = utils.isScopedPackage(packageName)
             echo "isScopedPackage: ${isScopedPackage}"
 
@@ -584,6 +587,7 @@ import com.evobanco.NodejsConstants
                     npmMirror = theNpmMirror
                     nodejsVersion = image_stream_nodejs_version
                     package_tag = packageTag
+                    package_tarball = packageTarball
                     is_scoped_package = isScopedPackage
                 }
 
@@ -618,6 +622,7 @@ import com.evobanco.NodejsConstants
                     branchHY = branchNameHY
                     branch_type = branchType
                     package_tag = packageTag
+                    package_tarball = packageTarball
                     is_scoped_package = isScopedPackage
                 }
             }
