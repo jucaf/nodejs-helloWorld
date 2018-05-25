@@ -617,6 +617,8 @@ import com.evobanco.NodejsConstants
                     repoUrl = npmRepositoryURL
                     branchHY = branchNameHY
                     branch_type = branchType
+                    package_tag = packageTag
+                    is_scoped_package = isScopedPackage
                 }
             }
 
