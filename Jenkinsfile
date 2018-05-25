@@ -464,6 +464,10 @@ import com.evobanco.NodejsConstants
                         branchName = build_from_artifact_branch
                         echo "new branchName: ${branchName}"
                     }
+                } else {
+
+                    cont = input message: 'Waiting for user approval',
+                    parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build without publishing on npm registry')]
                 }
 
 
