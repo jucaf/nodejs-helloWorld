@@ -42,8 +42,8 @@ objects:
     runPolicy: Serial
     source:
       git:
-        ref: master
-        uri: https://github.com/isanmartin0/s2i-nodejs-container.git
+        ref: ${SOURCE_REPOSITORY_BRANCH}
+        uri: ${SOURCE_REPOSITORY_URL}
       type: Git
     strategy:
       type: Source
