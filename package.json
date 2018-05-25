@@ -1,6 +1,6 @@
 {
   "name": "keedio-nodejs-helloworld",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hello World on Node js",
   "main": "server/app.js",
   "scripts": {
