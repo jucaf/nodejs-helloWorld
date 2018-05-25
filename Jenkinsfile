@@ -87,6 +87,8 @@ import com.evobanco.NodejsConstants
         stage('Checkout') {
             echo 'Getting source code...'
             checkout scm
+            projectURL = scm.userRemoteConfigs[0].url
+            echo 'Source code hosted in: ${projectURL}'
         }
 
 
@@ -108,8 +110,8 @@ import com.evobanco.NodejsConstants
         stage('Detect Node.js Parallel project configuration (PPC)') {
 
             packageJSON = readJSON file: 'package.json'
-            projectURL = packageJSON.repository.url
-            echo "projectURL: ${projectURL}"
+            //projectURL = packageJSON.repository.url
+            //echo "projectURL: ${projectURL}"
 
 
             packageName = packageJSON.name
@@ -568,8 +570,8 @@ import com.evobanco.NodejsConstants
 
                 echo "Building image on OpenShift..."
 
-                def my_sourceRepositoryURL = "https://github.com/isanmartin0/nodejs-helloWorld"
-                def my_sourceRepositoryBranch = "release/1.0.3"
+                //def my_sourceRepositoryURL = "https://github.com/isanmartin0/nodejs-helloWorld"
+                //def my_sourceRepositoryBranch = "release/1.0.3"
 
                 nodejsOpenshiftCheckAndCreateProject {
                     oseCredential = openshiftCredential
@@ -581,8 +583,8 @@ import com.evobanco.NodejsConstants
                     branchHY = branchNameHY
                     branch_type = branchType
                     dockerRegistry = registry
-                    sourceRepositoryURL = my_sourceRepositoryURL
-                    sourceRepositoryBranch = my_sourceRepositoryBranch
+                    sourceRepositoryURL = projectURL
+                    sourceRepositoryBranch = branchName
                     portNumber = port_number
                     npmMirror = theNpmMirror
                     nodejsVersion = image_stream_nodejs_version
