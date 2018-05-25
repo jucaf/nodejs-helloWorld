@@ -449,9 +449,12 @@ import com.evobanco.NodejsConstants
                 if (branchType in params.npmRegistryDeploy) {
 
                     stage('Artifact Deploy') {
-                        echo "Deploying artifact to Artifactory..."
+                        echo "Publishing artifact to a NPM registry"
                         withNPM(npmrcConfig: 'my-custom-npmrc') {
+                            echo 'npm whoami'
                             sh 'npm whoami'
+                            echo 'npm config registry'
+                            sh 'npm config get registry'
                             //sh 'npm publish'
                         }
 
