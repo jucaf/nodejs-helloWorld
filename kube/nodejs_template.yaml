@@ -55,6 +55,8 @@ objects:
           value: ${NPM_MIRROR}
         - name: NODEJS_PACKAGE_TAG
           value: ${NODEJS_PACKAGE_TAG}
+        - name: NODEJS_PACKAGE_TARBALL
+          value: ${NODEJS_PACKAGE_TARBALL}
         - name: NODEJS_IS_SCOPED_PACKAGE
           value: ${NODEJS_IS_SCOPED_PACKAGE}
         from:
@@ -238,6 +240,9 @@ parameters:
   value: ""
 - description: "Node module tag"
   name: "NODEJS_PACKAGE_TAG"
+  value: ""
+- description: "Node module tarball"
+  name: "NODEJS_PACKAGE_TARBALL"
   value: ""
 - description: "Flag indicating a scoped package"
   name: "NODEJS_IS_SCOPED_PACKAGE"
