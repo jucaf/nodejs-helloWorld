@@ -465,9 +465,10 @@ import com.evobanco.NodejsConstants
                         echo "new branchName: ${branchName}"
                     }
                 } else {
-                        echo "Sources of project (NOT PUBLISH ON NPM REGISTRY)"
-                        echo "Source URL: ${projectURL} --> ${projectURL}"
-                        echo "Source branch: ${branchName} --> ${branchName}"
+                        echo "******* WARNING. PACKAGE NOT PUBLISHED ON ANY NPM REGISTRY ******* "
+                        echo "The source code will be taken from a code repository, not from an artifact repository."
+                        echo "Source URL: ${projectURL}"
+                        echo "Source branch: ${branchName}"
                }
 
 
