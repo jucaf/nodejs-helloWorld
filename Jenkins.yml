@@ -17,7 +17,7 @@ ports:
   createPortEnvironmentVariable: true
 
 npmRegistryDeploy:
-  - release
+  # - release
 
 
 confirmDeploy:
