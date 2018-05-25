@@ -465,10 +465,10 @@ import com.evobanco.NodejsConstants
                         echo "new branchName: ${branchName}"
                     }
                 } else {
-
-                    cont = input message: 'Waiting for user approval',
-                    parameters: [choice(name: 'Continue?', choices: 'No\nYes', description: 'Choose "Yes" if you want to continue this build without publishing on npm registry')]
-                }
+                        echo "Sources of project (NOT PUBLISH ON NPM REGISTRY)"
+                        echo "Source URL: ${projectURL} --> ${projectURL}"
+                        echo "Source branch: ${branchName} --> ${branchName}"
+               }
 
 
 
