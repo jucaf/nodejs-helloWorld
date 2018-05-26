@@ -304,13 +304,19 @@ import com.evobanco.NodejsConstants
 
             stage('TEST tarball') {
                 withNPM(npmrcConfig: 'my-custom-npmrc') {
-                    echo 'Get tarball location...'
-                    sh 'tarball_location=$(npm view "${packageTag}" dist.tarball)'
+
+                    def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
+
+                    echo 'Get tarball location...no tag'
+                    sh 'tarball_location=$(npm view dist.tarball)'
+
+                    echo 'Get tarball location... previous tag'
+                    sh 'tarball_location=$(npm view "${anotherPackageTag}" dist.tarball)'
+
+
                     echo 'echo tarball location...'
                     sh 'echo $tarball_location'
                     echo 'echo tarball location 2....'
-                    echo $tarball_location
-                    echo 'echo tarball location 3....'
                     echo ${tarball_location}
                 }
             }
