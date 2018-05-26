@@ -304,8 +304,14 @@ import com.evobanco.NodejsConstants
 
             stage('TEST tarball') {
                 withNPM(npmrcConfig: 'my-custom-npmrc') {
+                    echo 'Get tarball location...'
                     sh 'tarball_location=$(npm view "${packageTag}" dist.tarball)'
+                    echo 'echo tarball location...'
                     sh 'echo $tarball_location'
+                    echo 'echo tarball location 2....'
+                    echo $tarball_location
+                    echo 'echo tarball location 3....'
+                    echo ${tarball_location}
                 }
             }
 
