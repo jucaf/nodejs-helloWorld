@@ -302,6 +302,13 @@ import com.evobanco.NodejsConstants
                 }
             }
 
+            stage('TEST tarball) {
+                withNPM(npmrcConfig: 'my-custom-npmrc') {
+                    sh 'tarball_location=$(npm view "${packageTag}" dist.tarball)'
+                    sh 'echo $tarball_location'
+                }
+            }
+
 
             stage('Prepare') {
                 echo "Prepare stage (PGC)"
