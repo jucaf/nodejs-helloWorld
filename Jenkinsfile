@@ -308,7 +308,7 @@ import com.evobanco.NodejsConstants
                     def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
 
                     echo 'Get tarball location... previous tag'
-                    sh 'tarball_location=$(npm view "${anotherPackageTag}" dist.tarball)'
+                    sh "tarball_location=$(npm view \"${anotherPackageTag}\" dist.tarball)""
 
                     echo 'Get tarball location... actual tag'
                     sh 'tarball_location=$(npm view "${packageTag}" dist.tarball)'
