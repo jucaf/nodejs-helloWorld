@@ -315,9 +315,8 @@ import com.evobanco.NodejsConstants
                 }
             }
 
-            exit 0
-            throw new hudson.AbortException('There are mandatory AppDynamics parameters without value for UAT environment. The mandatory parameters are: controllerHostnameUAT, controllerPortUAT, agentAccountNameUAT, agentAccountAccessKeyUAT and appDynamicsTemplatePath')
-
+            currentBuild.result = 'SUCCESS'
+            return
 
             stage('Prepare') {
                 echo "Prepare stage (PGC)"
