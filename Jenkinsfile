@@ -302,12 +302,15 @@ import com.evobanco.NodejsConstants
                 }
             }
 
-            stage('TEST tarball) {
+            stage('TEST tarball') {
                 withNPM(npmrcConfig: 'my-custom-npmrc') {
                     sh 'tarball_location=$(npm view "${packageTag}" dist.tarball)'
                     sh 'echo $tarball_location'
                 }
             }
+
+            exit 0
+            throw new hudson.AbortException('There are mandatory AppDynamics parameters without value for UAT environment. The mandatory parameters are: controllerHostnameUAT, controllerPortUAT, agentAccountNameUAT, agentAccountAccessKeyUAT and appDynamicsTemplatePath')
 
 
             stage('Prepare') {
