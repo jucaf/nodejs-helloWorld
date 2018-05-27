@@ -307,7 +307,7 @@ import com.evobanco.NodejsConstants
 
                     def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
 
-e                   echo 'echo variable'
+                    echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
 
 
