@@ -311,9 +311,8 @@ import com.evobanco.NodejsConstants
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
 
-                    echo '111'
-                    def command = "npm view ${anotherPackageTag} dist.tarball"
-                    def output = ['sh', '-c', command].execute().in.text
+                    def ver_script = $/eval "npm view  ${anotherPackageTag} dist.tarball | grep \"${anotherPackageTag}\""/$
+                    echo "${ver_script}"
 
                     echo 'aaa'
                     sh "echo ${output}"
