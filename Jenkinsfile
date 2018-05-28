@@ -308,49 +308,24 @@ import com.evobanco.NodejsConstants
                     def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
                     def anotherPackageTarball = "keedio-nodejs-helloworld-1.0.3.tgz"
                     def noexistPackageTag = "keedio-nodejs-helloworld@2.0.3"
+                    def noexistPackageTarball = "keedio-nodejs-helloworld-2.0.3.tgz"
 
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
 
+                    echo 'Get tarball location... previous tag'
                     def tarball_script = $/eval "npm view  ${anotherPackageTag} dist.tarball | grep '${anotherPackageTarball}'"/$
                     echo "${tarball_script}"
                     def tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
                     echo "${tarball_view}"
 
-                    echo 'aaa'
-                    sh "echo ${output}"
-
-                    echo 'xxx'
-                    sh "npm view ${anotherPackageTag} dist.tarball | grep \"${anotherPackageTag}\" > tarball_location"
-
-                    echo 'yyy'
-                    sh 'cat tarball_location '
+                    echo 'Get tarball location... non exist tag'
+                    tarball_script = $/eval "npm view  ${anotherPackageTag} dist.tarball | grep '${noexistPackageTarball}'"/$
+                    echo "${tarball_script}"
+                    tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
+                    echo "${tarball_view}"
 
 
-
-
-                    echo 'xxx2'
-                    sh "npm view ${noexistPackageTag} dist.tarball | grep \"${noexistPackageTag}\" > tarball_location"
-
-                    echo 'yyy2'
-                    sh 'cat tarball_location'
-
-
-                    echo 'Get tarball location... previous tag'
-                    sh '''tarball_location=$(npm view ${anotherPackageTag} dist.tarball)'''
-
-
-
-                    echo 'Get tarball location... previous tag 3'
-                    sh '''tarball_location=$(npm view \"${anotherPackageTag}\" dist.tarball)'''
-
-                    echo 'Get tarball location... previous tag 2'
-                    sh '''tarball_location=$(npm view '${anotherPackageTag}' dist.tarball)'''
-
-                    echo 'echo tarball location...'
-                    sh 'echo $tarball_location'
-                    echo 'echo tarball location 2....'
-                    echo ${tarball_location}
                 }
             }
 
