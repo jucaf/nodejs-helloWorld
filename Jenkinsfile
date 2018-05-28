@@ -306,12 +306,13 @@ import com.evobanco.NodejsConstants
                 withNPM(npmrcConfig: 'my-custom-npmrc') {
 
                     def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
+                    def anotherPackageTarball = "keedio-nodejs-helloworld-1.0.3.tgz"
                     def noexistPackageTag = "keedio-nodejs-helloworld@2.0.3"
 
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
 
-                    def tarball_script = $/eval "npm view  ${anotherPackageTag} dist.tarball | grep '${anotherPackageTag}'/$
+                    def tarball_script = $/eval "npm view  ${anotherPackageTag} dist.tarball | grep '${anotherPackageTarball}'"/$
                     echo "${tarball_script}"
                     def tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
                     echo "${tarball_view}"
