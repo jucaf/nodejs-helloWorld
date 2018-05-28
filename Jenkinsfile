@@ -312,16 +312,16 @@ import com.evobanco.NodejsConstants
                     sh " echo ${anotherPackageTag} "
 
                     echo 'xxx'
-                    sh "npm view ${anotherPackageTag} dist.tarball > tarball_location"
+                    sh "npm view ${anotherPackageTag} dist.tarball | grep ${anotherPackageTag} > tarball_location"
 
                     echo 'yyy'
-                    sh 'cat tarball_location'
+                    sh 'cat tarball_location '
 
 
 
 
                     echo 'xxx2'
-                    sh "npm view ${noexistPackageTag} dist.tarball > tarball_location"
+                    sh "npm view ${noexistPackageTag} dist.tarball | grep ${noexistPackageTag} > tarball_location"
 
                     echo 'yyy2'
                     sh 'cat tarball_location'
