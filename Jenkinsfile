@@ -315,7 +315,7 @@ import com.evobanco.NodejsConstants
                     def output = ['bash', '-c', command].execute().in.text
 
                     echo 'aaa'
-                    sh "echo ${output}""
+                    sh "echo ${output}"
 
                     echo 'xxx'
                     sh "npm view ${anotherPackageTag} dist.tarball | grep \"${anotherPackageTag}\" > tarball_location"
