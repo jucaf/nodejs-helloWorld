@@ -328,7 +328,7 @@ import com.evobanco.NodejsConstants
 
 
                     echo 'Get tarball location... previous tag'
-                    sh "tarball_location=$(npm view \"${anotherPackageTag}\" dist.tarball)"
+                    sh ``tarball_location=$(npm view ${anotherPackageTag} dist.tarball)```
 
 
 
