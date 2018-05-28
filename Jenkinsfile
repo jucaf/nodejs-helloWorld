@@ -306,9 +306,25 @@ import com.evobanco.NodejsConstants
                 withNPM(npmrcConfig: 'my-custom-npmrc') {
 
                     def anotherPackageTag = "keedio-nodejs-helloworld@1.0.3"
+                    def noexistPackageTag = "keedio-nodejs-helloworld@2.0.3"
 
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
+
+                    echo 'xxx'
+                    sh 'npm view ${anotherPackageTag} dist.tarball > tarball_location'
+
+                    echo 'yyy'
+                    sh 'cat tarball_location'
+
+
+
+
+                    echo 'xxx2'
+                    sh 'npm view ${noexistPackageTag} dist.tarball > tarball_location'
+
+                    echo 'yyy2'
+                    sh 'cat tarball_location'
 
 
                     echo 'Get tarball location... previous tag'
