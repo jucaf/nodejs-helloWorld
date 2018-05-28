@@ -310,6 +310,9 @@ import com.evobanco.NodejsConstants
                     def noexistPackageTag = "keedio-nodejs-helloworld@2.0.3"
                     def noexistPackageTarball = "keedio-nodejs-helloworld-2.0.3.tgz"
 
+                    noexistPackageTag = "keedio-nodejs-helloworld@1.0.4"
+                    noexistPackageTarball = "keedio-nodejs-helloworld-1.0.4.tgz"
+
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
 
