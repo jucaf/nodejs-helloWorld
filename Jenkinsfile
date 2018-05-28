@@ -310,8 +310,8 @@ import com.evobanco.NodejsConstants
                     def noexistPackageTag = "keedio-nodejs-helloworld@2.0.3"
                     def noexistPackageTarball = "keedio-nodejs-helloworld-2.0.3.tgz"
 
-                    noexistPackageTag = "keedio-nodejs-helloworld@1.0.4"
-                    noexistPackageTarball = "keedio-nodejs-helloworld-1.0.4.tgz"
+                    //noexistPackageTag = "keedio-nodejs-helloworld@1.0.4"
+                    //noexistPackageTarball = "keedio-nodejs-helloworld-1.0.4.tgz"
 
                     echo 'echo variable'
                     sh " echo ${anotherPackageTag} "
@@ -323,7 +323,7 @@ import com.evobanco.NodejsConstants
                     echo "${tarball_view}"
 
                     echo 'Get tarball location... non exist tag'
-                    tarball_script = $/eval "npm view  ${noexistPackageTag} dist.tarball | grep '${noexistPackageTarball}'"/$
+                    tarball_script = $/eval "npm view  ${noexistPackageTag} dist.tarball"/$
                     echo "${tarball_script}"
                     tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
                     echo 'xxxx'
