@@ -1,5 +1,4 @@
 #!/usr/bin/groovy
-@Library('msa-cicd-nodejs-jenkins-shared-libs')_
 
 import com.evobanco.NodejsUtils
 import com.evobanco.NodejsConstants
@@ -319,14 +318,6 @@ import com.evobanco.NodejsConstants
                     echo "${tarball_script}"
                     def tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
                     echo "${tarball_view}"
-
-                    echo 'Get tarball location... non exist tag'
-                    tarball_script = $/eval "npm view  ${noexistPackageTag} dist.tarball | grep '${noexistPackageTarball}'"/$
-                    echo "${tarball_script}"
-                    tarball_view = sh(script: "${tarball_script}", returnStdout: true).trim()
-                    echo 'xxxx'
-                    echo "${tarball_view}"
-
 
                 }
             }
