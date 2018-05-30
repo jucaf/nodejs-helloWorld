@@ -12,6 +12,7 @@
     "testResultsProcessor": "jest-sonar-reporter",
     "verbose": true,
     "collectCoverage": true,
+    "testRegex": "mytests/.*\\.(js|jsx)$",
     "collectCoverageFrom": [
       "server/**/*.{js,jsx}",
       "!**/coverage/**",
