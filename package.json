@@ -4,7 +4,7 @@
   "description": "Hello World on Node js",
   "main": "server/app.js",
   "scripts": {
-    "start": "node server/api.js",
+    "start": "./scripts/run.sh",
     "test": "jest",
     "script_prueba": "node server/app.js"
   },
