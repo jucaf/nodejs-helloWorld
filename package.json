@@ -10,7 +10,7 @@
   },
   "jest": {
     "testResultsProcessor": "jest-sonar-reporter",
-    "verbose": false,
+    "verbose": true,
     "collectCoverage": true,
     "testRegex": "mytests/.*\\.(js|jsx)$",
     "collectCoverageFrom": [
