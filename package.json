@@ -43,14 +43,7 @@
     "joi": "^13.1.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "gulp-if": "^2.0.0",
-    "gulp-jscs": "^3.0.2",
-    "gulp-jshint": "^1.12.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-nodemon": "^2.0.4",
-    "gulp-print": "^2.0.1",
-    "gulp-task-listing": "^1.0.1",
-    "gulp-util": "^3.0.7"
+    "escape-html": "^1.0.3",
+    "lucene-query-parser": "^1.0.1"
   }
 }
