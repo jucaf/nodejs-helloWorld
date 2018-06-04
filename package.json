@@ -1,18 +1,20 @@
 {
   "name": "keedio-nodejs-helloworld",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Hello World on Node js",
-  "main": "app.js",
+  "main": "server/api.js",
   "scripts": {
-    "start": "node api.js",
-    "test": "jest"
+    "start": "scripts/run.sh",
+    "test": "jest",
+    "script_prueba": "node server/app.js"
   },
   "jest": {
     "testResultsProcessor": "jest-sonar-reporter",
     "verbose": true,
     "collectCoverage": true,
+    "testRegex": "mytests/.*\\.(js|jsx)$",
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
+      "server/**/*.{js,jsx}",
       "!**/coverage/**",
       "!**/node_modules/**",
       "!**/.vscode/**",
@@ -36,11 +38,12 @@
   },
   "homepage": "https://github.com/isanmartin0/nodejs-helloWorld#readme",
   "dependencies": {
+    "@google/chatbase": "^1.1.1",
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "joi": "^13.1.0"
   },
   "devDependencies": {
-    "jest": "^18.1.0"
+    "proxyquire": "^1.8.0"
   }
 }
