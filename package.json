@@ -41,20 +41,8 @@
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "joi": "^13.1.0",
-    "babel-core": "^6.26.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "gulp-if": "^2.0.0",
-    "gulp-jscs": "^3.0.2",
-    "gulp-jshint": "^1.12.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-nodemon": "^2.0.4",
-    "gulp-print": "^2.0.1",
-    "gulp-task-listing": "^1.0.1",
-    "gulp-util": "^3.0.7",
-    "jest": "^22.4.2",
-    "proxyquire": "^1.8.0",
-    "yargs": "^3.30.0"
+    "proxyquire": "^1.8.0"
   }
 }
