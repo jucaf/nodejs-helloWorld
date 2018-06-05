@@ -2,7 +2,7 @@ const express = require('express');
 const Joi = require('joi');
 const app = express();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -23,7 +23,7 @@ function validateCourse(course) {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello world develop!!');
+    res.send('Hello world!!');
 });
 
 app.get('/api/courses', (req, res) => {
