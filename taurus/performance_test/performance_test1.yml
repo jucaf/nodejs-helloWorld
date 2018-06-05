@@ -10,7 +10,7 @@ scenarios:
   scenario-default:
     default-address:
     requests:
-    - url: /health
+    - url: /
       #think-time: 10
       method: GET
       headers:

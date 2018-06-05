@@ -22,7 +22,7 @@ class BasicSimulation extends Simulation {
     val loopScenario = scenario("Loop Scenario").forever() {
         exec(
             http("health")
-                .get("/health")
+                .get("/")
         )
     }
 
