@@ -1,0 +1,15 @@
+execution:
+- executor: gatling
+  concurrency: 100
+  ramp-up: 10s
+  hold-for: 30s
+  scenario:
+    script: health.scala
+    simulation: src.test.taurus.performance_test.BasicSimulation
+    keepalive: true
+
+# http://gettaurus.org/docs/ScenarioBuilding/
+
+reporting:
+  - module: final-stats
+    dump-xml: health-scala-stats.xml

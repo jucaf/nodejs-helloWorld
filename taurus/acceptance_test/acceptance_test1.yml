@@ -1,0 +1,26 @@
+execution:
+- executor: gatling
+  concurrency: AA
+  ramp-up: 10s
+  hold-for: 20s
+  iterations: 1
+  scenario: scenario-default
+
+# http://gettaurus.org/docs/ScenarioBuilding/
+scenarios:
+  scenario-default:
+    default-address:
+    requests:
+    - url: /health
+      #think-time: 10
+      method: GET
+      headers:
+        Content-Type: application/json
+      assert:
+      - contains:
+        - UP
+        subject: body
+
+reporting:
+  - module: final-stats
+    dump-xml: scenario-default-acceptance-health-stats.xml
