@@ -44,6 +44,7 @@
     "joi": "^13.1.0"
   },
   "devDependencies": {
-    "proxyquire": "^1.8.0"
+    "proxyquire": "^1.8.0",
+    "jest": "^22.4.2"
   }
 }
