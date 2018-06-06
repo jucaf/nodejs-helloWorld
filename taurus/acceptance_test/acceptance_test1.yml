@@ -18,7 +18,7 @@ scenarios:
         Content-Type: application/json
       assert:
       - contains:
-        - UP
+        - Hello world!!
         subject: body
 
 reporting:
