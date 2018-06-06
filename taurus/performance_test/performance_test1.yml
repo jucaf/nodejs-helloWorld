@@ -10,6 +10,19 @@ scenarios:
   scenario-default:
     default-address:
     requests:
+    - url: /api/courses
+      #think-time: 10
+      method: GET
+      headers:
+        Content-Type: application/json
+      assert:
+      - contains:
+        - Course 1
+        - Course 2
+        - Course 3
+        - Course 4
+        - Course 5
+        subject: body
     - url: /
       #think-time: 10
       method: GET
@@ -17,7 +30,7 @@ scenarios:
         Content-Type: application/json
       assert:
       - contains:
-        - UPX
+        - Hello world
         subject: body
 
 reporting:
