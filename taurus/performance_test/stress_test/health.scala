@@ -21,7 +21,7 @@ class BasicSimulation extends Simulation {
     // duration limit is reached
     val loopScenario = scenario("Loop Scenario").forever() {
         exec(
-            http("health")
+            http("/")
                 .get("/")
         )
     }
